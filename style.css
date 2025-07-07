@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to top right, #ffccd5, #fff0f5);
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#bokeh {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bokeh-flower {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(10px);
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.garden {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+}
+
+.flower {
+  width: 120px;
+  height: 120px;
+}
+
+.stem, .petal, .center {
+  transform-origin: center;
+  transform: scale(0);
+  opacity: 0;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  color: #d6336c;
+}
